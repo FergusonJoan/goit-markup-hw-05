@@ -44,6 +44,12 @@ address {
     font-style: normal;
     line-height: 1.7;
 }
+nav,
+footer,
+header,
+aside {
+    display: block;
+}
 
 :root {
     /* Text colors */
@@ -60,6 +66,9 @@ address {
     --social-color: #afb1b8;
     --social-bg-color: rgba(255, 255, 255, 0.1);
     --header-border-color: #ececec;
+    --inner-container-bg: rgba(47, 48, 58, 0.8);
+
+    --timiming-function: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 body {
     color: var(--primary-text-color);
@@ -111,6 +120,27 @@ body {
 .site-nav {
     display: flex;
 }
+.studio-item {
+    position: relative;
+}
+.link.current {
+    display: block;
+    color: var(--accent-color);
+}
+.link.current::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background-color: var(--accent-color);
+}
+.site-nav .link {
+    transition: color var(--timiming-function);
+}
 .site-nav .item + .item {
     margin-left: 50px;
 }
@@ -118,7 +148,7 @@ body {
     margin-left: 30px;
 }
 .site-nav .link,
-.site-contacts .link {
+.site-contacts .cont {
     display: inline-flex;
     padding-top: 32px;
     padding-bottom: 32px;
@@ -143,23 +173,24 @@ body {
 .cont:focus {
     color: var(--accent-color);
 }
-.site-link {
+.cont {
     display: inline-flex;
-    margin-right: 10px;
+
     align-items: center;
     color: var(--sec-text-color);
     fill: currentColor;
+    transition: color var(--timiming-function);
 }
-.site-link:hover {
+.cont:hover {
     color: var(--accent-color);
     fill: currentColor;
-}
-.site-contacts {
+    transition: color var(--timiming-function);
 }
 .contacts-item {
     display: inline-flex;
     align-items: center;
 }
+
 /* MAIN */
 /* Bigblock */
 .main {
@@ -274,6 +305,16 @@ body {
     gap: 30px;
 }
 .activities-elem {
+    position: relative;
+    overflow: hidden;
+}
+.inner-activities {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    min-width: 100%;
+    background-color: var(--inner-container-bg);
+    padding: 27px 0;
 }
 /* Team */
 .team-list {
@@ -301,9 +342,6 @@ body {
     font-size: 16px;
     line-height: 0.8;
 }
-/* .social-container {
-    padding: 0 32px 30px;
-} */
 .social-list {
     display: flex;
     gap: 10px;
@@ -321,11 +359,13 @@ body {
 
     background-color: var(--primary-white-color);
     color: var(--social-color);
+    transition: background-color var(--timiming-function), color var(--timiming-function);
 }
 .social-link:hover,
 .social-link:focus {
     background-color: var(--accent-color);
     color: #ffffff;
+    transition: background-color var(--timiming-function), color var(--timiming-function);
 }
 .social-icon {
     fill: currentColor;
@@ -349,6 +389,8 @@ body {
     border-radius: 4px;
     padding: 16px 32px;
     color: var(--social-color);
+
+    transition: color var(--timiming-function), border var(--timiming-function);
 }
 .clients-link:hover,
 .clients-link:focus {
@@ -381,6 +423,8 @@ body {
     background-color: var(--accent-color);
     color: var(--primary-white-color);
     box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+    transition: background-color var(--timiming-function), box-shadow var(--timiming-function),
+        color var(--timiming-function), box-shadow var(--timiming-function);
 }
 .filter {
     padding-top: 94px;
@@ -406,6 +450,10 @@ body {
     width: 370px;
     margin-right: 30px;
     margin-bottom: 30px;
+}
+.gallery-elem:hover {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+    transition: box-shadow var(--timiming-function);
 }
 
 .gallery-elem:nth-child(3n) {
@@ -467,18 +515,22 @@ body {
 .footer-elem:not(:last-child) {
     margin-bottom: 9px;
 }
-.footer-title {
+.white-title {
     font-weight: 700;
     font-size: 14px;
     line-height: calc(16 / 14);
     letter-spacing: 0.03em;
     text-transform: uppercase;
     color: var(--primary-white-color);
+    margin: 0;
+}
+.box .white-title {
     margin-bottom: 20px;
 }
 .footer-link {
     background-color: var(--social-bg-color);
     color: var(--primary-white-color);
+    transition: color var(--timiming-function);
 }
 .footer-icon {
     fill: var(--primary-white-color);
@@ -486,4 +538,3 @@ body {
 .social-footer-container {
     padding: 0;
 }
-/* gap: 10px ?????? */

@@ -25,20 +25,26 @@
                             class="logo accent">Web</span>Studio</span></a>
                 <nav class="site-main">
                     <ul class="site-nav list">
-                        <li class="item"><a href="#studio" class="link current">Студія</a> </li>
-                        <li class="item"><a href="./portfolio.html" class="link">Портфоліо</a> </li>
-                        <li class="item"><a href="#contacts" class="link">Контакти</a> </li>
+                        <li class="item studio-item">
+                            <a href="#studio" class="link current">Студія</a>
+                        </li>
+                        <li class="item">
+                            <a href="./portfolio.html" class="link ">Портфоліо</a>
+                        </li>
+                        <li class="item">
+                            <a href="#contacts" class="link">Контакти</a>
+                        </li>
                     </ul>
                 </nav>
                 <ul class="site-contacts list">
                     <li class="item contacts-item">
-                        <a href="mailto:info@devstudio.com" class="cont site-link" aria-label="envelope">
+                        <a href="mailto:info@devstudio.com" class="cont" aria-label="envelope">
                             <svg class="site-icon" width="16" height="12">
                                 <use href="./images/symbol-defs.svg#icon-envelope"></use>
                             </svg>info@devstudio.com</a>
                     </li>
                     <li class="item contacts-item">
-                        <a href="tel:+380961111111" class="cont site-link" aria-label="smartphone">
+                        <a href="tel:+380961111111" class="cont" aria-label="smartphone">
                             <svg class="site-icon" width="16" height="12">
                                 <use href="./images/symbol-defs.svg#icon-smartphone"></use>
                             </svg>+38 096 111 11 11</a>
@@ -111,13 +117,24 @@
                 <div class="container">
                     <h2 class="heading">Чим ми займаємося</h2>
                     <ul class="list activities-list">
-                        <li class="activities-elem"><img src="./images/box1.jpg" alt="Процесс написання коду"
-                                width="370">
+                        <li class="activities-elem">
+                            <img src="./images/box1.jpg" alt="Процесс написання коду" width="370">
+                            <div class="inner-activities">
+                                <p class="white-title">Десктопні додатки</p>
+                            </div>
                         </li>
-                        <li class="activities-elem"><img src="./images/box2.jpg"
-                                alt="Розробка макету для мобільного застосунку" width="370"></li>
-                        <li class="activities-elem"><img src="./images/box3.jpg" alt="Градієнт кольорів на планшеті"
-                                width="370"></li>
+                        <li class="activities-elem">
+                            <img src="./images/box2.jpg" alt="Розробка макету для мобільного застосунку" width="370">
+                            <div class="inner-activities">
+                                <p class="white-title">Мобільні додатки</p>
+                            </div>
+                        </li>
+                        <li class="activities-elem">
+                            <img src="./images/box3.jpg" alt="Градієнт кольорів на планшеті" width="370">
+                            <div class="inner-activities">
+                                <p class="white-title">Дизайнерські рішення</p>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </section>
@@ -341,7 +358,7 @@
                     </address>
                 </div>
                 <div class="box">
-                    <p class="footer-title">приєднуйтесь</p>
+                    <p class="white-title">приєднуйтесь</p>
                     <ul class="list social-list">
                         <li class="social-item">
                             <a href="#" class="social-link footer-link" aria-label="иконка инстаграм">
@@ -376,6 +393,7 @@
             </div>
         </footer>
     </div>
+    <script src="./js/modal.js"></script>
 </body>
 
 </html>

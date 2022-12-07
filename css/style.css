@@ -626,10 +626,12 @@ body {
     height: 30px;
     border: 1px solid var(--border-color);
     border-radius: 50%;
+    transition: border-color var(--timiming-function);
 }
 .hero-close-button:hover,
 .hero-close-button:focus {
     border-color: var(--accent-color);
+    transition: border-color var(--timiming-function);
 }
 .modal-icon {
     fill: currentColor;

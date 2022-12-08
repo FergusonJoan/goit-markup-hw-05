@@ -405,10 +405,11 @@ body {
     fill: currentColor;
 }
 /* FILTER */
-.filter {
-    margin: 94px 0 50px 0;
+.gallery-container {
+    padding: 94px 0;
 }
 .filter-list {
+    margin-bottom: 50px;
     display: flex;
     justify-content: center;
     gap: 8px;
@@ -428,6 +429,8 @@ body {
     font-size: 16px;
     line-height: 1.6;
     text-align: center;
+    transition: background-color var(--timiming-function), box-shadow var(--timiming-function),
+        color var(--timiming-function), box-shadow var(--timiming-function);
 }
 .button:hover,
 .button:focus {
@@ -443,7 +446,6 @@ body {
 .gallery-portfolio {
     display: flex;
     flex-wrap: wrap;
-    margin-bottom: 94px;
 }
 .gallery-elem {
     min-width: 370px;
@@ -452,6 +454,8 @@ body {
 }
 .gallery-elem-link {
     display: block;
+    transition: box-shadow var(--timiming-function), transform var(--timiming-function),
+        opacity var(--timiming-function);
 }
 .gallery-elem-link:hover,
 .gallery-elem-link:focus {
@@ -471,9 +475,6 @@ body {
     margin-bottom: 0;
 }
 
-.gallery-elem-link:hover,
-.gallery-elem-link:focus {
-}
 .gallery-border-container {
     border: 1px solid #eeeeee;
     border-top: none;
@@ -555,6 +556,11 @@ body {
 .addr {
     color: var(--footer-contacts-color);
     text-decoration: none;
+    transition: color var(--timiming-function);
+}
+.addr:hover,
+.addr:focus {
+    transition: color var(--timiming-function);
 }
 .footer-elem:not(:last-child) {
     margin-bottom: 9px;
@@ -574,7 +580,11 @@ body {
 .footer-link {
     background-color: var(--social-bg-color);
     color: var(--primary-white-color);
-    transition: color var(--timiming-function);
+    transition: color var(--timiming-function), background-color var(--timiming-function);
+}
+.footer-link:hover,
+.footer-link:focus {
+    transition: color var(--timiming-function), background-color var(--timiming-function);
 }
 .footer-icon {
     fill: var(--primary-white-color);

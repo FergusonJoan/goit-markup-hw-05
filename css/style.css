@@ -176,8 +176,6 @@ body {
     color: var(--accent-color);
 }
 .cont {
-    display: inline-flex;
-
     align-items: center;
     color: var(--sec-text-color);
     fill: currentColor;
